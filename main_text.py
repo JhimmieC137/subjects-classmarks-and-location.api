@@ -1,6 +1,4 @@
 import csv
-
-
 '''
 1. Using CSV, get columns as list
 2. Loop through class mark list and create new table with subject, classmark, location
@@ -70,11 +68,11 @@ def search_library(param_1, param_2):      #Searches the csv files with the give
                         result = f"Found {subject_name} with classmark '{reference}', on the{location}"             
                         break
                 
-            return f"{result}"                                                        #Returning results
+            return f"{result}"      #Returning results
         except: 
             return("\n\nOops... couldn't find that Subject name/Part-name in this Library.\n\nCheck that it's typed correctly")
     
-    elif options[param_1] == "Classmark":               #Classmark case search
+    elif options[param_1] == "Classmark":       #Classmark case search
         classmark = param_2
         count = 0
         subjects = []
@@ -100,11 +98,11 @@ def search_library(param_1, param_2):      #Searches the csv files with the give
                                 else:
                                     result = f"Found {subject_name} with Classmark '{reference}' on the {location}"   
                                        
-            return f"{result}"                                                             #Returning results
+            return f"{result}"      #Returning results
         except:
             return ("\n\nOops... couldn't find that Classmark in this Library.\n\nCheck that it's typed correctly")
     
-    else:                                               #Location case search
+    else:       #Location case search
         location = param_2
         try:
             clsmrk_range = classmark_locations[f'{location}']
@@ -116,13 +114,13 @@ def search_library(param_1, param_2):      #Searches the csv files with the give
                     if item >= begin and item <= end:
                         result.append([f"Found {subject} with Classmark '{item}', on the {location}"])
             
-            return f'{[x for x in result]}'                                                #Returning results 
+            return f'{[x for x in result]}'      #Returning results 
         except:
             return ("\n\nOops... couldn't find that Location in this Library.\n\nCheck that it's typed correctly")
         
 
     
-def home():                                             #The initiating function, it runs in a look till you dicide to quit
+def home():                #The initiating function, it runs in a look till you dicide to quit
     exit = False
     while exit is not True: 
         print("Welcome, Select a search parameter")
